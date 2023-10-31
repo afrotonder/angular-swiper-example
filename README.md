@@ -18,7 +18,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
-![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/3f450674-5571-41d3-816c-760cd046b816)
+![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/e2cea5ae-33c4-4667-abaa-7b3327706f4c)
 
 
 3. Import register function to initialize swiper in app.component. This only needs to be done once in the whole project.
@@ -26,7 +26,7 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA]
 import { register } from 'swiper/element/bundle';
 register();
 
-![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/b7de43f5-f5c1-4976-8c1b-20844e42b83e)
+![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/bc8efe94-3828-4319-b90e-39fee6b90ba6)
 
 4. Add swiper element to the .html file of the view youre working on.
 
