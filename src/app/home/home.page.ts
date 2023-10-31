@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  // @ViewChild('gallerySwiper')   swiperRef: ElementRef | undefined;
 
-  constructor() {}
+  testImages: Array<string>;
+
+  constructor() {
+
+    this.testImages = [
+      "../../assets/calaveras/1.png",
+      "../../assets/calaveras/2.png",
+      "../../assets/calaveras/3.png",
+    ]
+  }
 
 }

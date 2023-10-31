@@ -1,11 +1,14 @@
 #container {
   text-align: center;
 
+  margin: auto;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  width: 50%;
+
 }
 
 #container strong {
@@ -23,5 +26,11 @@
 }
 
 #container a {
+  
   text-decoration: none;
+}
+
+.swiperImage{
+  width: 355px;
+  height: 300px;
 }
