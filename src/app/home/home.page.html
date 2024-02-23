@@ -1,25 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="weekdays">
+    <span class="dayName">{{ weekdays[0].shortname }}</span>
+    <span class="dayName">{{ weekdays[1].shortname }}</span>
+    <span class="dayName">{{ weekdays[2].shortname }}</span>
+    <span class="dayName">{{ weekdays[3].shortname }}</span>
+    <span class="dayName">{{ weekdays[4].shortname }}</span>
+    <span class="dayName">{{ weekdays[5].shortname }}</span>
+    <span class="dayName">{{ weekdays[6].shortname }}</span>
+  </div>
 
   <div id="container">
-
-    <swiper-container #swiper navigation="true" pagination="true">
+    <swiper-container id="swiper" #swiper direction="vertical" space-between="12" slides-per-view="auto" mousewheel="true" centered-slides="true" centered-slides-bounds="true" initial-slide="297">
       <swiper-slide *ngFor="let image of testImages">
-        <img class="swiperImage" src="{{image}}" alt="">
+        <img class="swiperImage" [src]="image" alt="">
       </swiper-slide>
     </swiper-container>
   </div>
-
 </ion-content>

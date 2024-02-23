@@ -1,36 +1,35 @@
+.weekdays {
+  display: flex;
+  justify-items: stretch;
+  height: 24px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  gap: 16px;
+  justify-content: center;
+}
+
 #container {
+  z-index: 0;
+  position: relative;
+  padding-top: 24px;
   text-align: center;
 
   margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-
+  height: 100%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+#swiper {
+  background-color: gainsboro;
+  height: 100%;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  
-  text-decoration: none;
-}
-
-.swiperImage{
+.swiperImage {
   width: 355px;
-  height: 300px;
+  height: auto;
+}
+
+swiper-slide {
+  height: auto !important;
 }
