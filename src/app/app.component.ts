@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { register } from 'swiper/element/bundle'; // <--- IMPORT REGISTER HERE
-
-register(); // <--- INIT SWIPER HERE
+import { IonApp, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  imports: [IonApp, IonRouterOutlet],
 })
-export class AppComponent {
-  constructor() {}
-}
+export class AppComponent {}
