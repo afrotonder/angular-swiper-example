@@ -1,5 +1,5 @@
 # angular-swiper-example
-Simple angular ionic project implementing swiper.js 11, angular 16+ &amp; ionic 7+
+Simple angular ionic project implementing swiper.js 14, angular 22+ &amp; ionic 9+, using standalone components.
 
 
 # Steps
@@ -10,31 +10,41 @@ Simple angular ionic project implementing swiper.js 11, angular 16+ &amp; ionic 
     $ npm i swiper@latest
    ```
 
-2. Add CUSTOM_ELEMENTS_SCHEMA to the module.ts file of the view youre adding a swiper element to.
+2. Add `CUSTOM_ELEMENTS_SCHEMA` to the `@Component` decorator of the standalone component you're adding a swiper element to (Swiper's `swiper-container`/`swiper-slide` are plain web components, not Angular components, so Angular needs to be told to allow them).
 
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+```ts
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 
-&
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  imports: [/* ... */],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class HomePage {}
+```
 
-schemas: [CUSTOM_ELEMENTS_SCHEMA]
+3. Import the `register` function to initialize Swiper in `main.ts`. This only needs to be done once in the whole project, before `bootstrapApplication` runs.
 
-![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/e2cea5ae-33c4-4667-abaa-7b3327706f4c)
-
-
-3. Import register function to initialize swiper in app.component. This only needs to be done once in the whole project.
-
+```ts
 import { register } from 'swiper/element/bundle';
+
 register();
 
-![image](https://github.com/afrotonder/angular-swiper-example/assets/8844972/bc8efe94-3828-4319-b90e-39fee6b90ba6)
-
-4. Add swiper element to the .html file of the view youre working on.
-
+bootstrapApplication(AppComponent, {
+  providers: [/* ... */],
+});
 ```
-<swiper-container  navigation="true" pagination="true">
-  <swiper-slide *ngFor="let image of testImages">
-    <img class="swiperImage" src="{{image}}" alt="">
-  </swiper-slide>
+
+4. Add the swiper element to the `.html` file of the view you're working on, using Angular's `@for` control-flow syntax:
+
+```html
+<swiper-container navigation="true" pagination="true">
+  @for (image of testImages; track image) {
+    <swiper-slide>
+      <img class="swiperImage" src="{{image}}" alt="">
+    </swiper-slide>
+  }
 </swiper-container>
 ```
-

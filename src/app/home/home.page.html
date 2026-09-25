@@ -16,9 +16,11 @@
   <div id="container">
 
     <swiper-container #swiper navigation="true" pagination="true">
-      <swiper-slide *ngFor="let image of testImages">
-        <img class="swiperImage" src="{{image}}" alt="">
-      </swiper-slide>
+      @for (image of testImages; track image) {
+        <swiper-slide>
+          <img class="swiperImage" src="{{image}}" alt="">
+        </swiper-slide>
+      }
     </swiper-container>
   </div>
 
