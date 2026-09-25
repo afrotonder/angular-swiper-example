@@ -1,8 +1,38 @@
 # angular-swiper-example
-Simple angular ionic project implementing swiper.js 14, angular 22+ &amp; ionic 9+, using standalone components.
+Simple Angular Ionic project implementing Swiper.js 14, Angular 22+ and Ionic 9+, using standalone components.
+
+Companion project for the Medium post [Integrating Swiperjs with Ionic-Angular](https://medium.com/@afrotonder/integrating-swiperjs-with-angular-a1c4d287b096).
 
 
-# Steps
+# Running this project
+
+You need a current LTS version of [Node.js](https://nodejs.org/) and npm.
+
+1. Clone the repo and move into it.
+
+   ```
+   git clone https://github.com/afrotonder/angular-swiper-example.git
+   cd angular-swiper-example
+   ```
+
+2. Install dependencies.
+
+   ```
+   npm install
+   ```
+
+3. Start the dev server, then open http://localhost:4200 in your browser.
+
+   ```
+   npm start
+   ```
+
+   If you have the Ionic CLI installed (`npm i -g @ionic/cli`), `ionic serve` works too.
+
+Other scripts: `npm run build` (production build into `www/`), `npm test` (unit tests), `npm run lint`.
+
+
+# Adding Swiper to your own project
 
 1. Install the latest swiper.js version.
 
